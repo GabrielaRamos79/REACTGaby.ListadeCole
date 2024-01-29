@@ -1,4 +1,4 @@
-import './reactGaby.css'
+/*import './reactGaby.css'
 import React, { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 
@@ -14,7 +14,7 @@ const StudentForm = () => {
   });
 }
 
-/*function ReactGaby() {*/
+function ReactGaby() {
   const AlignmentExample = () => {
   return (
     <>
@@ -38,7 +38,7 @@ const StudentForm = () => {
   );
 }
   export default AlignmentExample;
-//}
+}
 
 
-//export default ReactGaby
+export default ReactGaby*/
