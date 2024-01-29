@@ -1,5 +1,4 @@
 import './reactGaby.css'
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 
