@@ -1,6 +1,8 @@
 import './reactGaby.css'
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
+
 
 const StudentForm = () => {
   const [students, setStudents] = useState([]);
@@ -13,7 +15,7 @@ const StudentForm = () => {
   });
 }
 
-function ReactGaby() {
+/*function ReactGaby() {*/
   function AlignmentExample(){
   return (
     <>
@@ -37,7 +39,7 @@ function ReactGaby() {
   );
 }
   export default AlignmentExample;
-}
+//}
 
 
-export default ReactGaby
+//export default ReactGaby
