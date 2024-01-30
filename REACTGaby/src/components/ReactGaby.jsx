@@ -1,25 +1,25 @@
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { UserService } from '../userService';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 {/*import Nav from 'react-bootstrap/Nav';*/}
 import './reactGaby.css'
 
-const StudentForm = () => {
+const UserList = () =>{
+  
   const [user, setUser] = useState(
-    { 
+    {
       userName: "",
       userSurname: "",
-    
-    }
-
-  );
-
+    });
+ 
   const [userList, setUserList] = useState([]);
 
   async function getData(){
+      
       let users = await UserService.getAllUsers();
+      
       setUserList(users)
       
   }
@@ -28,8 +28,18 @@ const StudentForm = () => {
 
   function handleNameChange(e){
 
-      setUser([e.target.value])
+      setUser({...user, [e.target.name]:e.target.value})
   };
+
+  async function handleAddUserToList() {
+
+    await UserService.submitUser(user);
+
+      setUser({
+        userName:  "",
+        userSurname: ""
+  });
+  }
 }
 
 function IndexForm() {
@@ -67,4 +77,4 @@ function IndexForm() {
 
 
 
-export default IndexForm
+export default UserList;

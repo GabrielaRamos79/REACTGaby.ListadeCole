@@ -15,6 +15,10 @@ export const UserService = {
         let response = await apiClient.get("/users");
         let allUsers = response.data
         return allUsers;
+    },
+
+    async submitUser() {
+        await console.log("Hola")
     }
     
 }
