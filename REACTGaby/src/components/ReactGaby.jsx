@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import { UserService } from '../userService';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 {/*import Nav from 'react-bootstrap/Nav';*/}
 import './reactGaby.css'
 
@@ -60,10 +63,42 @@ function IndexForm() {
           </Navbar.Brand>
         </Container>
       </Navbar>
-     
+
+      <Button variant="primary">Añadir</Button>{' '}
+      <Button variant="primary">Editar</Button>{' '}
+      <Button variant="primary">Eliminar</Button>{' '}
+
+      <Form>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Name:</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Surname:</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Second Surname:</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+      
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Email address:</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Phone Number:</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+      
+      </Form>
       {/*AQUI LO QUE QUIERAS AÑADIR EN L WEB*/}
     
-    { userList.map((user, index)=>(
+    { UserList.map((user, index)=>(
           <li key={index}>{user.userName} {user.userSurname} </li>
       ))
     }
