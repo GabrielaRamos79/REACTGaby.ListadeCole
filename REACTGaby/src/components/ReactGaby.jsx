@@ -1,27 +1,43 @@
 
 import React, { useState } from 'react';
+import { UserService } from '../userService';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 {/*import Nav from 'react-bootstrap/Nav';*/}
 import './reactGaby.css'
 
 const StudentForm = () => {
-  const [students, setStudents] = useState([]);
-  const [formData, setFormData] = useState({
-    nombre: '',
-    apellido1: '',
-    apellido2: '',
-    email:  '',
-    telefono: '',
-  });
+  const [user, setUser] = useState(
+    { 
+      userName: "",
+      userSurname: "",
+    
+    }
+
+  );
+
+  const [userList, setUserList] = useState([]);
+
+  async function getData(){
+      let users = await UserService.getAllUsers();
+      setUserList(users)
+      
+  }
+
+  getData();
+
+  function handleNameChange(e){
+
+      setUser([e.target.value])
+  };
 }
 
 function IndexForm() {
 
   return (
     <>
-    <Navbar className="bg-body-tertiary">
-        <Container bg-color>
+    <Navbar className="bg-body-tertiary" bg="light" data-bs-theme="light">
+        <Container>
           <Navbar.Brand href="#home">
             <img
               alt=""
@@ -34,23 +50,14 @@ function IndexForm() {
           </Navbar.Brand>
         </Container>
       </Navbar>
-      {/*<Nav className="justify-content-end miEstilo " activeKey="/home">
-        <Nav.Item>
-          <Nav.Link href="/home">Añadir Lista</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Editar Lista</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Eliminar Lista</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-            Disabled
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>*/}
+     
       {/*AQUI LO QUE QUIERAS AÑADIR EN L WEB*/}
+    
+    { userList.map((user, index)=>(
+          <li key={index}>{user.userName} {user.userSurname} </li>
+      ))
+    }
+
     </>
 
    
