@@ -1,7 +1,9 @@
-/*import './reactGaby.css'
-import React, { useState } from 'react';
-import Nav from 'react-bootstrap/Nav';
 
+import React, { useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+{/*import Nav from 'react-bootstrap/Nav';*/}
+import './reactGaby.css'
 
 const StudentForm = () => {
   const [students, setStudents] = useState([]);
@@ -14,11 +16,25 @@ const StudentForm = () => {
   });
 }
 
-function ReactGaby() {
-  const AlignmentExample = () => {
+function IndexForm() {
+
   return (
     <>
-      <Nav className="justify-content-end miEstilo" activeKey="/home">
+    <Navbar className="bg-body-tertiary">
+        <Container bg-color>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src="./img/logo.png"
+              width="120"
+              height="120"
+              className="d-inline-block align-top"
+            />{' '}
+            <strong>Arrabal School</strong>
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+      {/*<Nav className="justify-content-end miEstilo " activeKey="/home">
         <Nav.Item>
           <Nav.Link href="/home">Añadir Lista</Nav.Link>
         </Nav.Item>
@@ -33,12 +49,15 @@ function ReactGaby() {
             Disabled
           </Nav.Link>
         </Nav.Item>
-      </Nav>
+      </Nav>*/}
+      {/*AQUI LO QUE QUIERAS AÑADIR EN L WEB*/}
     </>
+
+   
   );
 }
-  export default AlignmentExample;
-}
+  //export default AlignmentExample;
 
 
-export default ReactGaby*/
+
+export default IndexForm
